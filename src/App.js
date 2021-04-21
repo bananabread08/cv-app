@@ -1,19 +1,23 @@
 import React, { Component } from "react";
 import './styles/App.css';
+import editIcon from './assets/edit.svg';
 import GeneralInfo from './components/GeneralInfo';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import SKills from './components/Skills'
 
 
 class App extends Component {
   render(){
       return (
         <div className="App">
-          <GeneralInfo />
+          <GeneralInfo editIcon={editIcon}/>
           <hr />
-          <Education />
+          <Education editIcon={editIcon}/>
           <hr />
-          <Experience />
+          <Experience editIcon={editIcon}/>
+          <hr/>
+          <SKills editIcon={editIcon}/>
         </div>
       )   
   }

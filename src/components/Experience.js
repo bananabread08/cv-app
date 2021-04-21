@@ -52,7 +52,7 @@ export default class Experience extends Component {
           <p>{jobTitle}</p> 
           <p>{jobDescription}</p>
           <p>Years: {startYear}-{endYear}</p>
-          <button onClick={this.handleSubmit}>Edit Experience</button>
+          <button onClick={this.handleSubmit}><img src={this.props.editIcon} alt="Edit" className="EditIcon"></img></button>
         </div>
       )
     }

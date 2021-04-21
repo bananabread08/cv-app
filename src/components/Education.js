@@ -43,11 +43,11 @@ export default class Education extends Component {
     else {
       return (
         <div className="EducationPreview">
-          <h1>Education</h1>
-          <h2>{school}</h2>  
+          <button onClick={this.handleSubmit}><img src={this.props.editIcon} alt="Edit" className="EditIcon"></img></button>
+          <h2>Education</h2>
+          <h3>{school}</h3>  
           <p>{gradDate}</p> 
           <p>{course}</p>
-          <button onClick={this.handleSubmit}>Edit Education Information </button>
         </div>
       )
     }

@@ -22,6 +22,11 @@ hr {
   margin: 0 auto;
   width: 95%;
 }
+.EditIcon {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
 .GeneralInfo {
   display: flex;
   flex-direction: column;
@@ -31,6 +36,8 @@ hr {
 .GeneralInfoPreview {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .GeneralInfoPreview:hover > button{
   visibility: visible;
@@ -52,7 +59,8 @@ hr {
 }
 .EducationPreview{
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .Experience {
   display: flex;
@@ -62,11 +70,30 @@ hr {
 }
 .ExperiencePreview{
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .ExperiencePreview:hover > button{
   visibility: visible;
 }
 .ExperiencePreview > button {
+  visibility : hidden;
+}
+.Skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.SkillsPreview{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.SkillsPreview:hover > button{
+  visibility: visible;
+}
+.SkillsPreview > button {
   visibility : hidden;
 }

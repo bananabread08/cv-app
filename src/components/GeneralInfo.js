@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import { TextField } from '@material-ui/core';
 
 export default class GeneralInfo extends Component {
-  constructor(){
-      super();
+  constructor(props){
+      super(props);
 
       this.state = {
           name : 'Phoenix Wright',
@@ -24,12 +24,6 @@ export default class GeneralInfo extends Component {
     })
     e.preventDefault();
   }
-  // enableEdit = (e) => {
-  //   this.setState({
-  //       isEditOn : true,
-  // })
-  //   e.preventDefault();
-  // }
   render() {
     const {name, contact, email, isEditOn} = this.state;
     if(isEditOn) {
@@ -48,10 +42,10 @@ export default class GeneralInfo extends Component {
     else {
       return (
         <div className="GeneralInfoPreview">
+          <button onClick={this.handleSubmit}><img src={this.props.editIcon} alt="Edit" className="EditIcon"></img></button>
           <h2>{name}</h2>  
           <p>{contact}</p> 
           <p>{email}</p> 
-        <button onClick={this.handleSubmit}>Edit General Information </button>
         </div>
       )
     }
