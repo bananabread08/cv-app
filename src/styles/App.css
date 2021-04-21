@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: #c9ced3; */
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+body {
+  background: #1e1f26;
+  height: 100vh;
+}
+.App {
+  background : white;
+  width : 8.5in;
+  min-height: 11in;
+  height: 100%;
+  margin : auto;
+  padding-top: 20px;
+}
+hr {
+  margin: 0 auto;
+  width: 95%;
+}
+.GeneralInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.GeneralInfoPreview {
+  display: flex;
+  flex-direction: column;
+}
+.GeneralInfoPreview:hover > button{
+  visibility: visible;
+}
+.GeneralInfoPreview > button {
+  visibility : hidden;
+}
+.Education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.EducationPreview:hover > button{
+  visibility: visible;
+}
+.EducationPreview > button {
+  visibility : hidden;
+}
+.EducationPreview{
+  display: flex;
+  flex-direction: column;
+}
+.Experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.ExperiencePreview{
+  display: flex;
+  flex-direction: column;
+}
+.ExperiencePreview:hover > button{
+  visibility: visible;
+}
+.ExperiencePreview > button {
+  visibility : hidden;
+}
