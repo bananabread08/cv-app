@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    /* background-color: #c9ced3; */
-    font-family: 'Poppins',sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* background-color: #c9ced3; */
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 body {
   background: #1e1f26;
   height: 100vh;
 }
 .App {
-  background : white;
-  width : 8.5in;
+  background: white;
+  width: 8.5in;
   min-height: 11in;
   height: 100%;
-  margin : auto;
+  margin: auto;
   padding-top: 20px;
 }
 hr {
@@ -39,11 +39,11 @@ hr {
   align-items: center;
   justify-content: center;
 }
-.GeneralInfoPreview:hover > button{
+.GeneralInfoPreview:hover > button {
   visibility: visible;
 }
 .GeneralInfoPreview > button {
-  visibility : hidden;
+  visibility: hidden;
 }
 .Education {
   display: flex;
@@ -51,13 +51,13 @@ hr {
   align-items: center;
   justify-content: space-between;
 }
-.EducationPreview:hover > button{
+/* .EducationPreview:hover > button {
   visibility: visible;
 }
 .EducationPreview > button {
-  visibility : hidden;
-}
-.EducationPreview{
+  visibility: hidden;
+} */
+.EducationPreview {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -68,32 +68,33 @@ hr {
   align-items: center;
   justify-content: space-between;
 }
-.ExperiencePreview{
+.ExperiencePreview {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
 }
-.ExperiencePreview:hover > button{
+/* .ExperiencePreview:hover > button {
   visibility: visible;
 }
 .ExperiencePreview > button {
-  visibility : hidden;
-}
+  visibility: hidden;
+} */
 .Skills {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-.SkillsPreview{
+.SkillsPreview {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-evenly;
 }
-.SkillsPreview:hover > button{
+/* .SkillsPreview:hover > button {
   visibility: visible;
 }
 .SkillsPreview > button {
-  visibility : hidden;
-}
+  visibility: hidden;
+} */
