@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TextField } from '@material-ui/core';
+import '../styles/GeneralInfo.css';
 
 export default class GeneralInfo extends Component {
   constructor(props) {
@@ -7,8 +8,10 @@ export default class GeneralInfo extends Component {
 
     this.state = {
       name: 'Phoenix Wright',
+      role: 'Defense Attorney',
       contact: '0912334555466',
       email: 'theaceattorney12#@gmail.com',
+      site: 'https://github.com/daphoenix12#',
       isEditOn: false,
     };
   }
@@ -25,54 +28,83 @@ export default class GeneralInfo extends Component {
     e.preventDefault();
   };
   render() {
-    const { name, contact, email, isEditOn } = this.state;
+    const { name, role, contact, email, site, isEditOn } = this.state;
     return (
       <div>
         {isEditOn ? (
-          <section className='GeneralInfo'>
-            General Information
+          <section className="GeneralInfo">
+            <h3 className="SectionLabels">General Information</h3>
             <form onSubmit={this.handleSubmit}>
-              <TextField
-                id='GiName'
-                label='Name...'
-                variant='outlined'
-                name='name'
-                value={name}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id='GiContact'
-                label='Contact#...'
-                variant='outlined'
-                name='contact'
-                type='number'
-                value={contact}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id='GiEmail'
-                label='Email Address...'
-                variant='outlined'
-                type='email'
-                name='email'
-                value={email}
-                onChange={this.handleChange}
-              />
-              <input type='submit' value='Submit' />
+              <div>
+                <TextField
+                  id="GiName"
+                  label="Name..."
+                  variant="outlined"
+                  name="name"
+                  value={name}
+                  onChange={this.handleChange}
+                />
+                <TextField
+                  id="GiRole"
+                  label="Role/Position..."
+                  variant="outlined"
+                  name="role"
+                  value={role}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div>
+                <TextField
+                  id="GiContact"
+                  label="Contact#..."
+                  variant="outlined"
+                  name="contact"
+                  type="number"
+                  value={contact}
+                  onChange={this.handleChange}
+                />
+                <TextField
+                  id="GiEmail"
+                  label="Email Address..."
+                  variant="outlined"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                />
+                <TextField
+                  id="GiSite"
+                  label="Website..."
+                  variant="outlined"
+                  name="site"
+                  value={site}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <input type="submit" value="Submit" />
             </form>
           </section>
         ) : (
-          <div className='GeneralInfoPreview'>
-            <button onClick={this.handleSubmit}>
-              <img
-                src={this.props.editIcon}
-                alt='Edit'
-                className='EditIcon'
-              ></img>
-            </button>
-            <h2>{name}</h2>
-            <p>{contact}</p>
-            <p>{email}</p>
+          <div className="GeneralInfoPreview">
+            <img
+              src={this.props.editIcon}
+              alt="Edit"
+              className="EditIcon"
+              onClick={this.handleSubmit}
+            ></img>
+            <div>
+              <h2>{name}</h2>
+              <h4>{role}</h4>
+            </div>
+            <div>
+              <p>Contact#: {contact}</p>
+              <p>Email: {email}</p>
+              {site && (
+                <p>
+                  Site: <a href={site}>{site}</a>
+                </p>
+              )}
+            </div>
           </div>
         )}
       </div>

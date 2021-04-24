@@ -1,0 +1,37 @@
+.Experience {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.Experience > form > * {
+  padding: 5px;
+}
+#StartYear,
+#EndYear {
+  width: 100px;
+}
+.ExperiencePreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 20px;
+}
+.ExperiencePreview > img {
+  flex-basis: 5%;
+}
+.ExperiencePreview > div {
+  flex-basis: 95%;
+  line-height: 2em;
+}
+.ExperiencePreview .CompanyDeets {
+  flex-shrink: 1.5;
+}
+.ExperiencePreview:hover > img {
+  transform: scale(1.5);
+  filter: invert(37%) sepia(94%) saturate(1462%) hue-rotate(166deg)
+    brightness(101%) contrast(101%);
+}

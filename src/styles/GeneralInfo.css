@@ -1,0 +1,33 @@
+.GeneralInfo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+}
+.GeneralInfo > form > * {
+  padding: 5px;
+}
+.GeneralInfoPreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.GeneralInfoPreview > div > p > a {
+  color: black;
+}
+.GeneralInfoPreview > img {
+  flex-basis: 5%;
+}
+.GeneralInfoPreview > div {
+  flex-basis: 95%;
+  line-height: 2em;
+} /* change color of svg*/
+.GeneralInfoPreview:hover > img {
+  transform: scale(1.5);
+  filter: invert(37%) sepia(94%) saturate(1462%) hue-rotate(166deg)
+    brightness(101%) contrast(101%);
+}

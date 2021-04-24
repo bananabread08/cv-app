@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { TextField } from '@material-ui/core';
+import '../styles/Experience.css';
 
 export default class Experience extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      company: 'Wright & Co. Law Firm',
-      jobTitle: 'Defense Attorney',
-      startYear: '2015',
-      endYear: '2021',
-      jobDescription: 'Taking pro-bono cases, ',
+      company: 'Place of Work',
+      jobTitle: 'Job Title/Position',
+      startYear: 'Year Started',
+      endYear: 'Year Ended',
+      jobDescription:
+        'A brief description of your Role/Position in the Company. i.e "Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design".',
       isEditOn: false,
     };
   }
@@ -39,67 +41,70 @@ export default class Experience extends Component {
     return (
       <div>
         {isEditOn ? (
-          <section className='Experience'>
-            Experience
+          <section className="Experience">
             <form onSubmit={this.handleSubmit}>
-              <TextField
-                id='outlined-basic'
-                label='Company Name...'
-                variant='outlined'
-                name='company'
-                value={company}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id='outlined-basic'
-                label='Job Title...'
-                variant='outlined'
-                name='jobTitle'
-                value={jobTitle}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id='outlined-basic'
-                label='Year Started...'
-                variant='outlined'
-                name='startYear'
-                value={startYear}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id='outlined-basic'
-                label='Year Ended...'
-                variant='outlined'
-                name='endYear'
-                value={endYear}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id='outlined-basic'
-                label='Job Description...'
-                variant='outlined'
-                name='jobDescription'
-                value={jobDescription}
-                onChange={this.handleChange}
-              />
-              <input type='submit' value='Submit' />
+              <div>
+                <TextField
+                  id="outlined-basic"
+                  label="Company Name..."
+                  variant="outlined"
+                  name="company"
+                  value={company}
+                  onChange={this.handleChange}
+                />
+                <TextField
+                  id="outlined-basic"
+                  label="Job Title..."
+                  variant="outlined"
+                  name="jobTitle"
+                  value={jobTitle}
+                  onChange={this.handleChange}
+                />
+                <TextField
+                  id="StartYear"
+                  label="Year Started..."
+                  variant="outlined"
+                  name="startYear"
+                  value={startYear}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div>
+                <TextField
+                  id="EndYear"
+                  label="Year Ended..."
+                  variant="outlined"
+                  name="endYear"
+                  value={endYear}
+                  onChange={this.handleChange}
+                />
+                <textarea
+                  id="outlined-basic"
+                  label="Job Description..."
+                  name="jobDescription"
+                  value={jobDescription}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <input type="submit" value="Submit" />
             </form>
           </section>
         ) : (
-          <div className='ExperiencePreview'>
-            <h2>{company}</h2>
-            <p>{jobTitle}</p>
-            <p>{jobDescription}</p>
-            <p>
-              Years: {startYear}-{endYear}
-            </p>
-            <button onClick={this.handleSubmit}>
-              <img
-                src={this.props.editIcon}
-                alt='Edit'
-                className='EditIcon'
-              ></img>
-            </button>
+          <div className="ExperiencePreview">
+            <img
+              src={this.props.editIcon}
+              alt="Edit"
+              className="EditIcon"
+              onClick={this.handleSubmit}
+            ></img>
+            <div className="CompanyDeets">
+              <h3>{company}</h3>
+              <p>{jobTitle}</p>
+              <p>
+                [{startYear}-{endYear}]
+              </p>
+            </div>
+            <div>{jobDescription}</div>
           </div>
         )}
       </div>

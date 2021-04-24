@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import editIcon from './assets/edit.svg';
+import addIcon from './assets/plus.svg';
 import GeneralInfo from './components/GeneralInfo';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import uniqid from 'uniqid';
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -34,31 +35,37 @@ class App extends Component {
   render() {
     const { schoolList, experienceList } = this.state;
     return (
-      <div className='App'>
+      <div className="App">
         <GeneralInfo editIcon={editIcon} />
         <hr />
-        <div>
-          <button onClick={this.addEducation}>Add</button>
-          Education
-          {schoolList.map((schoolID) => {
-            return (
-              <Education key={schoolID} id={schoolID} editIcon={editIcon} />
-            );
-          })}
-        </div>
+        <h3 className="SectionLabels">
+          Experience {''} {/*add space between text and icon*/}
+          <img
+            src={addIcon}
+            alt="Add Experience"
+            onClick={this.addExperience}
+            className="addIcon"
+          ></img>
+        </h3>
+        {experienceList.map((expID) => {
+          return <Experience key={expID} id={expID} editIcon={editIcon} />;
+        })}
         <hr />
-        <div>
-          <button onClick={this.addExperience}>Add</button>
-          Experience
-          {experienceList.map((expID) => {
-            return <Experience key={expID} id={expID} editIcon={editIcon} />;
-          })}
-        </div>
+        <h3 className="SectionLabels">
+          Education {''}
+          <img
+            src={addIcon}
+            alt="Add Education"
+            onClick={this.addEducation}
+            className="addIcon"
+          ></img>
+        </h3>
+        {schoolList.map((schoolID) => {
+          return <Education key={schoolID} id={schoolID} editIcon={editIcon} />;
+        })}
         <hr />
         <Skills editIcon={editIcon} />
       </div>
     );
   }
 }
-
-export default App;

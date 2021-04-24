@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import '../styles/Skills.css';
 
 export default class Skills extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      skill: 'HTML-CSS-Bootstrap-JavaScript-Webpack-ReactJS',
+      skill: 'HTML-CSS-JavaScript-Webpack-ReactJS-MySQL-OOP',
       isEditOn: false,
     };
   }
@@ -27,30 +28,29 @@ export default class Skills extends Component {
     const { skill, isEditOn } = this.state;
     if (isEditOn) {
       return (
-        <section className='Skills'>
-          Skills
+        <section className="Skills">
+          <h3 className="SectionLabelsSkill">Skills</h3>
           <form onSubmit={this.handleSubmit}>
             <textarea
-              name='skill'
+              name="skill"
               value={skill}
               onChange={this.handleChange}
             ></textarea>
-            <input type='submit' value='Submit' />
+            <input type="submit" value="Submit" />
           </form>
         </section>
       );
     } else {
       return (
-        <div className='SkillsPreview'>
-          Skills
+        <div className="SkillsPreview">
+          <img
+            src={this.props.editIcon}
+            alt="Edit"
+            className="EditIcon"
+            onClick={this.handleSubmit}
+          ></img>
+          <h3 className="SectionLabelsSkill">Skills</h3>
           <p>{skill}</p>
-          <button onClick={this.handleSubmit}>
-            <img
-              src={this.props.editIcon}
-              alt='Edit'
-              className='EditIcon'
-            ></img>
-          </button>
         </div>
       );
     }

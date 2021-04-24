@@ -1,0 +1,27 @@
+.Skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.SkillsPreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.SkillsPreview > img {
+  flex-basis: 3%;
+}
+.SkillsPreview > h3 {
+  flex-basis: 12%;
+}
+.SkillsPreview p {
+  flex-basis: 85%;
+  text-align: center;
+}
+.SkillsPreview:hover > img {
+  transform: scale(1.5);
+  filter: invert(37%) sepia(94%) saturate(1462%) hue-rotate(166deg)
+    brightness(101%) contrast(101%);
+}

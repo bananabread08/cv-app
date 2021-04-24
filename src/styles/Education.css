@@ -1,0 +1,26 @@
+.Education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.EducationPreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 20px;
+}
+.EducationPreview > img {
+  flex-basis: 5%;
+}
+.EducationPreview > h3,
+.EducationPreview > p {
+  flex-basis: 95%;
+}
+.EducationPreview:hover > img {
+  transform: scale(1.5);
+  filter: invert(37%) sepia(94%) saturate(1462%) hue-rotate(166deg)
+    brightness(101%) contrast(101%);
+}
