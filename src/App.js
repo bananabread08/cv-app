@@ -7,6 +7,8 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import uniqid from 'uniqid';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 export default class App extends Component {
   constructor() {
@@ -17,6 +19,23 @@ export default class App extends Component {
       id: uniqid(),
     };
   }
+
+  exportPdf = () => {
+    const hide = document.querySelectorAll('.ToHide');
+    hide.forEach((element) => {
+      element.style.visibility = 'hidden';
+    });
+    html2canvas(document.querySelector('.App'), {
+      width: 816,
+      height: 1056,
+    }).then((canvas) => {
+      //document.body.appendChild(canvas); // if you want see your screenshot in body.
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'in', [8.5, 11]); //set pdf size to 8.5in x 11in Portrait
+      pdf.addImage(imgData, 'PNG', 0, 0);
+      pdf.save('CV.pdf');
+    });
+  };
 
   addEducation = (e) => {
     e.preventDefault();
@@ -36,6 +55,9 @@ export default class App extends Component {
     const { schoolList, experienceList } = this.state;
     return (
       <div className="App">
+        <button className="Export ToHide" onClick={this.exportPdf}>
+          Export as PDF
+        </button>
         <GeneralInfo editIcon={editIcon} />
         <hr />
         <h3 className="SectionLabels">
@@ -44,7 +66,7 @@ export default class App extends Component {
             src={addIcon}
             alt="Add Experience"
             onClick={this.addExperience}
-            className="addIcon"
+            className="addIcon ToHide"
           ></img>
         </h3>
         {experienceList.map((expID) => {
@@ -57,7 +79,7 @@ export default class App extends Component {
             src={addIcon}
             alt="Add Education"
             onClick={this.addEducation}
-            className="addIcon"
+            className="addIcon ToHide"
           ></img>
         </h3>
         {schoolList.map((schoolID) => {

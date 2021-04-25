@@ -83,10 +83,11 @@ export default class Experience extends Component {
                   label="Job Description..."
                   name="jobDescription"
                   value={jobDescription}
+                  maxLength="250"
                   onChange={this.handleChange}
                 />
               </div>
-              <input type="submit" value="Submit" />
+              <input className="Submit-btn" type="submit" value="Submit" />
             </form>
           </section>
         ) : (
@@ -94,7 +95,7 @@ export default class Experience extends Component {
             <img
               src={this.props.editIcon}
               alt="Edit"
-              className="EditIcon"
+              className="EditIcon ToHide"
               onClick={this.handleSubmit}
             ></img>
             <div className="CompanyDeets">

@@ -45,3 +45,27 @@ textarea {
   width: 500px;
   height: 100px;
 }
+.Export {
+  display: flex;
+  margin: 0 auto;
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+.Export:hover {
+  color: #404040 !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+  background: #dbdbdb;
+  box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.3s ease 0s;
+}
+.ToHide {
+  visibility: visible;
+}

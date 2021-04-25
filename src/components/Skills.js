@@ -34,9 +34,10 @@ export default class Skills extends Component {
             <textarea
               name="skill"
               value={skill}
+              maxLength="70"
               onChange={this.handleChange}
             ></textarea>
-            <input type="submit" value="Submit" />
+            <input className="Submit-btn" type="submit" value="Submit" />
           </form>
         </section>
       );
@@ -46,7 +47,7 @@ export default class Skills extends Component {
           <img
             src={this.props.editIcon}
             alt="Edit"
-            className="EditIcon"
+            className="EditIcon ToHide"
             onClick={this.handleSubmit}
           ></img>
           <h3 className="SectionLabelsSkill">Skills</h3>

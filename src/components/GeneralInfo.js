@@ -81,7 +81,7 @@ export default class GeneralInfo extends Component {
                   onChange={this.handleChange}
                 />
               </div>
-              <input type="submit" value="Submit" />
+              <input className="Submit-btn" type="submit" value="Submit" />
             </form>
           </section>
         ) : (
@@ -89,7 +89,7 @@ export default class GeneralInfo extends Component {
             <img
               src={this.props.editIcon}
               alt="Edit"
-              className="EditIcon"
+              className="EditIcon ToHide"
               onClick={this.handleSubmit}
             ></img>
             <div>
