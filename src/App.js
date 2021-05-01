@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import editIcon from './assets/edit.svg';
 import addIcon from './assets/plus.svg';
+import githubIcon from './assets/github-corner-right.svg';
 import GeneralInfo from './components/GeneralInfo';
 import Education from './components/Education';
 import Experience from './components/Experience';
@@ -25,10 +26,7 @@ export default class App extends Component {
     hide.forEach((element) => {
       element.style.visibility = 'hidden';
     });
-    html2canvas(document.querySelector('.App'), {
-      width: 816,
-      height: 1056,
-    }).then((canvas) => {
+    html2canvas(document.querySelector('.App'), {}).then((canvas) => {
       //document.body.appendChild(canvas); // if you want see your screenshot in body.
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'in', [8.5, 11]); //set pdf size to 8.5in x 11in Portrait
@@ -55,9 +53,18 @@ export default class App extends Component {
     const { schoolList, experienceList } = this.state;
     return (
       <div className="App">
-        <button className="Export ToHide" onClick={this.exportPdf}>
-          Export as PDF
-        </button>
+        <div className="header">
+          <button className="Export ToHide" onClick={this.exportPdf}>
+            Export as PDF
+          </button>
+          <a href="https://github.com/bananabread08/cv-app">
+            <img
+              className="github ToHide"
+              src={githubIcon}
+              alt="GitHub link"
+            ></img>
+          </a>
+        </div>
         <GeneralInfo editIcon={editIcon} />
         <hr />
         <h3 className="SectionLabels">

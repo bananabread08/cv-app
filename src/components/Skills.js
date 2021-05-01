@@ -1,59 +1,52 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import '../styles/Skills.css';
 
-export default class Skills extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      skill: 'HTML-CSS-JavaScript-Webpack-ReactJS-MySQL-OOP',
-      isEditOn: false,
-    };
-  }
-
-  handleChange = (e) => {
-    this.setState({
+const Skills = (props) => {
+  const [SkillValues, setSkillValues] = useState({
+    skill: 'HTML-CSS-JavaScript-Webpack-ReactJS-MySQL-OOP',
+    isEditOn: false,
+  });
+  const handleChange = (e) => {
+    setSkillValues({
+      ...SkillValues,
       [e.target.name]: e.target.value, //utilizes the HTML name attribute of the node that is changed
     });
   };
-  handleSubmit = (e) => {
-    this.setState({
-      skill: this.state.skill,
-      isEditOn: !this.state.isEditOn,
+  const handleSubmit = (e) => {
+    setSkillValues({
+      ...SkillValues,
+      isEditOn: !SkillValues.isEditOn,
     });
     e.preventDefault();
   };
-
-  render() {
-    const { skill, isEditOn } = this.state;
-    if (isEditOn) {
-      return (
+  return (
+    <div>
+      {SkillValues.isEditOn ? (
         <section className="Skills">
           <h3 className="SectionLabelsSkill">Skills</h3>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <textarea
               name="skill"
-              value={skill}
+              value={SkillValues.skill}
               maxLength="70"
-              onChange={this.handleChange}
+              onChange={handleChange}
             ></textarea>
             <input className="Submit-btn" type="submit" value="Submit" />
           </form>
         </section>
-      );
-    } else {
-      return (
+      ) : (
         <div className="SkillsPreview">
           <img
-            src={this.props.editIcon}
+            src={props.editIcon}
             alt="Edit"
             className="EditIcon ToHide"
-            onClick={this.handleSubmit}
+            onClick={handleSubmit}
           ></img>
           <h3 className="SectionLabelsSkill">Skills</h3>
-          <p>{skill}</p>
+          <p>{SkillValues.skill}</p>
         </div>
-      );
-    }
-  }
-}
+      )}
+    </div>
+  );
+};
+export default Skills;

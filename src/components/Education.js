@@ -1,79 +1,74 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
 import '../styles/Education.css';
 
-export default class Education extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      school: 'School/University Name',
-      gradDate: 'Graduation Year, if applicable',
-      course: 'Course, if Tertiary Education',
-      isEditOn: false,
-    };
-  }
-
-  handleChange = (e) => {
-    this.setState({
+const Education = (props) => {
+  const [EducationValues, setEducationValues] = useState({
+    school: 'School/University Name',
+    gradDate: 'Graduation Year, if applicable',
+    course: 'Course, if Tertiary Education',
+    isEditOn: false,
+  });
+  const handleChange = (e) => {
+    setEducationValues({
+      ...EducationValues,
       [e.target.name]: e.target.value, //utilizes the HTML name attribute of the node that is changed
     });
   };
-  handleSubmit = (e) => {
-    this.setState({
-      isEditOn: !this.state.isEditOn,
+  const handleSubmit = (e) => {
+    setEducationValues({
+      ...EducationValues,
+      isEditOn: !EducationValues.isEditOn,
     });
     e.preventDefault();
   };
 
-  render() {
-    const { school, gradDate, course, isEditOn } = this.state;
-    return (
-      <div>
-        {isEditOn ? (
-          <section className="Education">
-            <form onSubmit={this.handleSubmit}>
-              <TextField
-                id="outlined-basic"
-                label="School..."
-                variant="outlined"
-                name="school"
-                value={school}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id="outlined-basic"
-                label="Course..."
-                variant="outlined"
-                name="course"
-                value={course}
-                onChange={this.handleChange}
-              />
-              <TextField
-                id="outlined-basic"
-                label="Graduation Date..."
-                variant="outlined"
-                name="gradDate"
-                value={gradDate}
-                onChange={this.handleChange}
-              />
-              <input className="Submit-btn" type="submit" value="Submit" />
-            </form>
-          </section>
-        ) : (
-          <div className="EducationPreview">
-            <img
-              src={this.props.editIcon}
-              alt="Edit"
-              className="EditIcon ToHide"
-              onClick={this.handleSubmit}
-            ></img>
-            <h3>{school}</h3>
-            {course && <p>{course}</p>}
-            {gradDate && <p>{gradDate}</p>}
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      {EducationValues.isEditOn ? (
+        <section className="Education">
+          <form onSubmit={handleSubmit}>
+            <TextField
+              id="outlined-basic"
+              label="School..."
+              variant="outlined"
+              name="school"
+              value={EducationValues.school}
+              onChange={handleChange}
+            />
+            <TextField
+              id="outlined-basic"
+              label="Course..."
+              variant="outlined"
+              name="course"
+              value={EducationValues.course}
+              onChange={handleChange}
+            />
+            <TextField
+              id="outlined-basic"
+              label="Graduation Year..."
+              variant="outlined"
+              name="gradDate"
+              value={EducationValues.gradDate}
+              onChange={handleChange}
+            />
+            <input className="Submit-btn" type="submit" value="Submit" />
+          </form>
+        </section>
+      ) : (
+        <div className="EducationPreview">
+          <img
+            src={props.editIcon}
+            alt="Edit"
+            className="EditIcon ToHide"
+            onClick={handleSubmit}
+          ></img>
+          <h3>{EducationValues.school}</h3>
+          {EducationValues.course && <p>{EducationValues.course}</p>}
+          {EducationValues.gradDate && <p>{EducationValues.gradDate}</p>}
+        </div>
+      )}
+    </div>
+  );
+};
+export default Education;

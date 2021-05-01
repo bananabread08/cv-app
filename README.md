@@ -1,18 +1,26 @@
 # Project: CV Maker (Curriculum Vitae Make)
+
 The CV Project for TOP (The Odin Project)
 
 ## Features and Functionalities
-* Create a CV/Resume by inputting information on respective section forms.
-* Edit submitted information
-* Ability to save and / or print as `.pdf`.
 
-## Resources
-TBA
+- Create a CV/Resume by inputting information on respective section forms.
+- Edit submitted information
+- Ability to save and / or print as `.pdf`.
 
 ## Usage
-TBA
 
----------------------------------------------------------------------------------------
+1. Click any of the Edit Buttons (see Edit Icon) to edit a specific part of the CV.
+2. Type in your information, submit, then see the preview on the spot.
+3. Add more Work Experience and Schools using the dedicated add button (`+`, see Add Icon).
+4. Export as PDF when you are done.
+
+## Resources
+
+- `html2canvas` & `jspdf`
+- `materialui`
+
+---
 
 # Getting Started with Create React App
 

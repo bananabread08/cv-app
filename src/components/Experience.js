@@ -1,114 +1,104 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
 import '../styles/Experience.css';
 
-export default class Experience extends Component {
-  constructor(props) {
-    super(props);
+const Experience = (props) => {
+  const [ExperienceValues, setExperienceValues] = useState({
+    company: 'Place of Work',
+    jobTitle: 'Job Title/Position',
+    startYear: 'Year Started',
+    endYear: 'Year Ended',
+    jobDescription:
+      'A brief description of your Role/Position in the Company. i.e "Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design".',
+    isEditOn: false,
+  });
 
-    this.state = {
-      company: 'Place of Work',
-      jobTitle: 'Job Title/Position',
-      startYear: 'Year Started',
-      endYear: 'Year Ended',
-      jobDescription:
-        'A brief description of your Role/Position in the Company. i.e "Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design".',
-      isEditOn: false,
-    };
-  }
-
-  handleChange = (e) => {
-    this.setState({
+  const handleChange = (e) => {
+    setExperienceValues({
+      ...ExperienceValues,
       [e.target.name]: e.target.value, //utilizes the HTML name attribute of the node that is changed
     });
   };
-  handleSubmit = (e) => {
-    this.setState({
-      isEditOn: !this.state.isEditOn,
+
+  const handleSubmit = (e) => {
+    setExperienceValues({
+      ...ExperienceValues,
+      isEditOn: !ExperienceValues.isEditOn,
     });
     e.preventDefault();
   };
 
-  render() {
-    const {
-      company,
-      jobTitle,
-      startYear,
-      endYear,
-      jobDescription,
-      isEditOn,
-    } = this.state;
-    return (
-      <div>
-        {isEditOn ? (
-          <section className="Experience">
-            <form onSubmit={this.handleSubmit}>
-              <div>
-                <TextField
-                  id="outlined-basic"
-                  label="Company Name..."
-                  variant="outlined"
-                  name="company"
-                  value={company}
-                  onChange={this.handleChange}
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="Job Title..."
-                  variant="outlined"
-                  name="jobTitle"
-                  value={jobTitle}
-                  onChange={this.handleChange}
-                />
-                <TextField
-                  id="StartYear"
-                  label="Year Started..."
-                  variant="outlined"
-                  name="startYear"
-                  value={startYear}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div>
-                <TextField
-                  id="EndYear"
-                  label="Year Ended..."
-                  variant="outlined"
-                  name="endYear"
-                  value={endYear}
-                  onChange={this.handleChange}
-                />
-                <textarea
-                  id="outlined-basic"
-                  label="Job Description..."
-                  name="jobDescription"
-                  value={jobDescription}
-                  maxLength="250"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <input className="Submit-btn" type="submit" value="Submit" />
-            </form>
-          </section>
-        ) : (
-          <div className="ExperiencePreview">
-            <img
-              src={this.props.editIcon}
-              alt="Edit"
-              className="EditIcon ToHide"
-              onClick={this.handleSubmit}
-            ></img>
-            <div className="CompanyDeets">
-              <h3>{company}</h3>
-              <p>{jobTitle}</p>
-              <p>
-                [{startYear}-{endYear}]
-              </p>
+  return (
+    <div>
+      {ExperienceValues.isEditOn ? (
+        <section className="Experience">
+          <form onSubmit={handleSubmit}>
+            <div>
+              <TextField
+                id="outlined-basic"
+                label="Company Name..."
+                variant="outlined"
+                name="company"
+                value={ExperienceValues.company}
+                onChange={handleChange}
+              />
+              <TextField
+                id="outlined-basic"
+                label="Job Title..."
+                variant="outlined"
+                name="jobTitle"
+                value={ExperienceValues.jobTitle}
+                onChange={handleChange}
+              />
+              <TextField
+                id="StartYear"
+                label="Year Started..."
+                variant="outlined"
+                name="startYear"
+                value={ExperienceValues.startYear}
+                onChange={handleChange}
+              />
             </div>
-            <div>{jobDescription}</div>
+            <div>
+              <TextField
+                id="EndYear"
+                label="Year Ended..."
+                variant="outlined"
+                name="endYear"
+                value={ExperienceValues.endYear}
+                onChange={handleChange}
+              />
+              <textarea
+                id="outlined-basic"
+                label="Job Description..."
+                name="jobDescription"
+                value={ExperienceValues.jobDescription}
+                maxLength="250"
+                onChange={handleChange}
+              />
+            </div>
+            <input className="Submit-btn" type="submit" value="Submit" />
+          </form>
+        </section>
+      ) : (
+        <div className="ExperiencePreview">
+          <img
+            src={props.editIcon}
+            alt="Edit"
+            className="EditIcon ToHide"
+            onClick={handleSubmit}
+          ></img>
+          <div className="CompanyDeets">
+            <h3>{ExperienceValues.company}</h3>
+            <p>{ExperienceValues.jobTitle}</p>
+            <p>
+              [{ExperienceValues.startYear}-{ExperienceValues.endYear}]
+            </p>
           </div>
-        )}
-      </div>
-    );
-  }
-}
+          <div>{ExperienceValues.jobDescription}</div>
+        </div>
+      )}
+    </div>
+  );
+};
+export default Experience;

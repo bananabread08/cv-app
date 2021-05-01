@@ -17,6 +17,21 @@ body {
   margin: auto;
   padding-top: 20px;
 }
+.header {
+  display: block;
+  position: relative;
+}
+.header > a {
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
+.header > a > img {
+  height: 70px;
+  width: 70px;
+  fill: #151513 !important;
+  color: black;
+}
 .SectionLabels {
   margin-top: 10px;
   margin-left: 30px;
@@ -68,4 +83,15 @@ textarea {
 }
 .ToHide {
   visibility: visible;
+}
+
+@media screen and (max-width: 732px) {
+  body {
+    overflow: hidden;
+    height: 100vh;
+  }
+  .App {
+    width: 100%;
+    font-size: 9px;
+  }
 }
