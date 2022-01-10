@@ -6,6 +6,8 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
+  overflow-wrap: break-word;
+  background-color: rgb(204, 204, 204);
 }
 
 *,
@@ -16,4 +18,14 @@ body {
 
 .App {
   text-align: center;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
