@@ -16,7 +16,7 @@ const StyledForm = styled.form`
   padding: 10px;
   font-size: 14px;
   border: 1px solid white;
-  width: 90vw;
+  width: 95vw;
 `;
 
 const SubmitBtn = styled.button`
@@ -67,7 +67,9 @@ const InputContainer = styled.div`
     display: inline-block;
     width: 150px;
     text-align: end;
-    padding-right: 10px;
+    padding-right: 5px;
+    flex-basis: 35%;
+    font-weight: 700;
   }
 `;
 
@@ -153,7 +155,7 @@ export default function GenInfo() {
         <InputContainer>
           <label>Website (if any):</label>
           <StyledInput
-            type="text"
+            type="url"
             placeholder="github.com/jedelacruz1"
             name="site"
             value={GenInfoValues.site}
