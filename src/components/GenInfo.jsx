@@ -73,7 +73,7 @@ export default function GenInfo() {
             placeholder="221B Baker Street, London, England"
             name="address"
             value={GenInfoValues.address}
-            Rows="2"
+            rows={3}
             onChange={handleChange}
           ></StyledTextArea>
         </InputContainer>
