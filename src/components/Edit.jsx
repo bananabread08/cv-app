@@ -12,18 +12,27 @@ export default function Edit() {
   const addEducation = (e) => {
     let id = uniqid();
     e.preventDefault();
-    setSchoolList((prevState) =>
-      prevState.concat({ school: <Education key={id} />, id: id })
-    );
+    setSchoolList((prevState) => prevState.concat(id));
   };
 
+  const deleteEducation = (e, selectedIndex) => {
+    e.preventDefault();
+    const newArr = [...schoolList].filter(
+      (e, index) => index !== selectedIndex
+    );
+    setSchoolList((prevState) => (prevState = newArr));
+  };
   return (
     <>
       <h2>General Information</h2>
       <GenInfo />
       <h2>Education </h2>
-      {schoolList.map((comp) => (
-        <Education key={comp.id} id={comp.id} />
+      {schoolList.map((id, index) => (
+        <Education
+          key={id}
+          id={id}
+          deleteEducation={(e) => deleteEducation(e, index)}
+        />
       ))}
       <SubmitBtn onClick={addEducation}>Add More</SubmitBtn>
       <h2>Experience</h2>
