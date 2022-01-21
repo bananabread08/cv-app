@@ -7,15 +7,29 @@ import {
   StyledTextArea,
   SubmitBtn,
 } from './styles/shared/sharedStyle';
+import styled from 'styled-components';
 
-export default function Experience() {
+const DeleteBtn = styled(SubmitBtn)`
+  background-color: red;
+
+  &:hover {
+    background-color: #b43838;
+  }
+`;
+
+export default function Experience(props) {
+  // const initial = {company: 'Wright and Co. Law Offices',
+  // jobTitle: 'Attorney at Law',
+  // startYear: 2015,
+  // endYear: 2020,
+  // jobDescription:
+  //   'Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design.',};
   const [ExperienceValues, setExperienceValues] = useState({
-    company: 'Wright and Co. Law Offices',
-    jobTitle: 'Attorney at Law',
-    startYear: 2015,
-    endYear: 2020,
-    jobDescription:
-      'Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design.',
+    company: '',
+    jobTitle: '',
+    startYear: '',
+    endYear: '',
+    jobDescription: '',
   });
 
   const handleChange = (e) => {
@@ -35,6 +49,7 @@ export default function Experience() {
   return (
     <StyledSection>
       <StyledForm onSubmit={handleSubmit}>
+        <DeleteBtn onClick={props.deleteExperience}>Delete</DeleteBtn>
         <InputContainer>
           <label>Company:</label>
           <StyledInput

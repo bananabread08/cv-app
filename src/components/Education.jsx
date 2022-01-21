@@ -16,10 +16,14 @@ const DeleteBtn = styled(SubmitBtn)`
   }
 `;
 export default function Education(props) {
+  /* const init = {school: 'University of London',
+  gradDate: '2021',
+  course: 'Juris Doctor',} 
+  */
   const [EducationValues, setEducationValues] = useState({
-    school: 'University of London',
-    gradDate: '2021',
-    course: 'Juris Doctor',
+    school: '',
+    gradDate: '',
+    course: '',
   });
 
   const handleChange = (e) => {
