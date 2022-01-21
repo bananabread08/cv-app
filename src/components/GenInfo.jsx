@@ -10,13 +10,12 @@ import {
 
 export default function GenInfo() {
   const [GenInfoValues, setGenInfoValues] = useState({
-    name: 'Phoenix Wright',
-    role: 'Defense Attorney',
-    contact: '09123345554',
-    address: 'Wright Anything Agency, Los Angeles',
-    email: 'theaceattorney12#@gmail.com',
-    site: 'https://github.com/daphoenix12#',
-    isEditOn: false,
+    name: '',
+    role: '',
+    contact: '',
+    address: '',
+    email: '',
+    site: '',
   });
 
   const handleChange = (e) => {

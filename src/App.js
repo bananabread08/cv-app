@@ -1,17 +1,28 @@
 import './App.css';
-import GenInfo from './components/GenInfo';
-import Education from './components/Education';
-import Experience from './components/Experience';
+import Edit from './components/Edit';
 
 function App() {
+  // const populateFields = () => {
+  //   const initialData = {
+  //     name: 'Phoenix Wright',
+  //     role: 'Defense Attorney',
+  //     contact: '09123345554',
+  //     address: 'Wright Anything Agency, Los Angeles',
+  //     email: 'theaceattorney12#@gmail.com',
+  //     site: 'https://github.com/daphoenix12#',
+  //   };
+
+  //   document.querySelectorAll(InputContainer).forEach((cont) => {
+  //     for (let key in initialData) {
+  //       if (key === cont.childNodes[1].name)
+  //         cont.childNodes[1].value = initialData[key];
+  //     }
+  //   });
+  // };
   return (
     <div className="App">
-      <h2>General Information</h2>
-      <GenInfo />
-      <h2>Education</h2>
-      <Education />
-      <h2>Experience</h2>
-      <Experience />
+      {/* <button onClick={populateFields}>Fill All Fields</button> */}
+      <Edit />
     </div>
   );
 }
