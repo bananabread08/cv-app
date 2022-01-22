@@ -24,7 +24,7 @@ export default function Education(props) {
   return (
     <StyledSection>
       <StyledForm>
-        <DeleteBtn onClick={props.deleteEducation}>Delete</DeleteBtn>
+        <DeleteBtn onClick={props.deleteEducation}>Remove</DeleteBtn>
         <InputContainer>
           <label>School/University:</label>
           <StyledInput
