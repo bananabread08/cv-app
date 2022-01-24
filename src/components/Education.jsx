@@ -31,6 +31,7 @@ export default function Education(props) {
             type="text"
             placeholder="University of the Philippines"
             name="school"
+            className="education"
             value={props.school.school}
             onChange={props.handleChange}
           ></StyledInput>
@@ -40,6 +41,7 @@ export default function Education(props) {
           <StyledInput
             type="number"
             name="gradDate"
+            className="education"
             placeholder="2022"
             min={1950}
             max={2030}
@@ -53,6 +55,7 @@ export default function Education(props) {
             type="text"
             placeholder="Course (if applicable) i.e Biology"
             name="course"
+            className="education"
             value={props.school.course}
             onChange={props.handleChange}
           ></StyledInput>

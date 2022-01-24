@@ -1,47 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   StyledSection,
   StyledForm,
   InputContainer,
   StyledInput,
   StyledTextArea,
-  SubmitBtn,
 } from './styles/shared/sharedStyle';
 
-export default function GenInfo() {
-  const [GenInfoValues, setGenInfoValues] = useState({
-    name: '',
-    role: '',
-    contact: '',
-    address: '',
-    email: '',
-    site: '',
-  });
-
-  const handleChange = (e) => {
-    setGenInfoValues({
-      ...GenInfoValues, //save the current state of  all values
-      [e.target.name]: e.target.value, //utilizes the HTML name attribute of the node that is changed
-    });
-  };
-
-  const handleSubmit = (e) => {
-    setGenInfoValues({
-      ...GenInfoValues,
-    });
-    e.preventDefault();
-  };
-
+export default function GenInfo({ genInfoValues, handleChange }) {
   return (
     <StyledSection>
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm>
         <InputContainer>
           <label>Name:</label>
           <StyledInput
             type="text"
             placeholder="Juan E. Dela Cruz"
             name="name"
-            value={GenInfoValues.name}
+            className="gen-info"
+            value={genInfoValues.name}
             onChange={handleChange}
           ></StyledInput>
         </InputContainer>
@@ -51,7 +28,8 @@ export default function GenInfo() {
             type="text"
             placeholder="Software Engineer"
             name="role"
-            value={GenInfoValues.role}
+            className="gen-info"
+            value={genInfoValues.role}
             onChange={handleChange}
           ></StyledInput>
         </InputContainer>
@@ -61,7 +39,8 @@ export default function GenInfo() {
             type="number"
             placeholder="+639161234567"
             name="contact"
-            value={GenInfoValues.contact}
+            className="gen-info"
+            value={genInfoValues.contact}
             onChange={handleChange}
           ></StyledInput>
         </InputContainer>
@@ -71,7 +50,8 @@ export default function GenInfo() {
             type="text"
             placeholder="221B Baker Street, London, England"
             name="address"
-            value={GenInfoValues.address}
+            className="gen-info"
+            value={genInfoValues.address}
             rows={3}
             onChange={handleChange}
           ></StyledTextArea>
@@ -82,7 +62,8 @@ export default function GenInfo() {
             type="email"
             placeholder="jedelacruz1@gmail.com"
             name="email"
-            value={GenInfoValues.email}
+            className="gen-info"
+            value={genInfoValues.email}
             onChange={handleChange}
           ></StyledInput>
         </InputContainer>
@@ -92,14 +73,11 @@ export default function GenInfo() {
             type="url"
             placeholder="github.com/jedelacruz1"
             name="site"
-            value={GenInfoValues.site}
+            className="gen-info"
+            value={genInfoValues.site}
             onChange={handleChange}
           ></StyledInput>
         </InputContainer>
-
-        <SubmitBtn type="submit" value="Submit">
-          Submit
-        </SubmitBtn>
       </StyledForm>
     </StyledSection>
   );

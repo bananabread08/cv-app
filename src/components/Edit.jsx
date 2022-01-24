@@ -11,6 +11,7 @@ export default function Edit({
   handleChange,
   addEducation,
   deleteEducation,
+  genInfoValues,
 }) {
   const [experienceList, setExperienceList] = useState([]);
 
@@ -29,7 +30,7 @@ export default function Edit({
   return (
     <>
       <h2>General Information</h2>
-      <GenInfo />
+      <GenInfo genInfoValues={genInfoValues} handleChange={handleChange} />
       <h2>Education </h2>
       {schoolList.map((school, i) => {
         return (
