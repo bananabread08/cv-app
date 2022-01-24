@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GenInfo from './GenInfo';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
-import uniqid from 'uniqid';
 import { SubmitBtn } from './styles/shared/sharedStyle';
 
 export default function Edit({
@@ -12,21 +11,10 @@ export default function Edit({
   addEducation,
   deleteEducation,
   genInfoValues,
+  experienceList,
+  addExperience,
+  deleteExperience,
 }) {
-  const [experienceList, setExperienceList] = useState([]);
-
-  const addExperience = (e) => {
-    e.preventDefault();
-    setExperienceList((prevState) => prevState.concat(uniqid()));
-  };
-
-  const deleteExperience = (e, selectedIndex) => {
-    e.preventDefault();
-    const newArr = [...experienceList].filter(
-      (e, index) => index !== selectedIndex
-    );
-    setExperienceList((prevState) => (prevState = newArr));
-  };
   return (
     <>
       <h2>General Information</h2>
@@ -45,11 +33,13 @@ export default function Edit({
       })}
       <SubmitBtn onClick={addEducation}>Add School</SubmitBtn>
       <h2>Experience</h2>
-      {experienceList.map((id, index) => (
+      {experienceList.map((exp, index) => (
         <Experience
-          key={id}
-          id={id}
+          key={exp.id}
+          id={exp.id}
+          exp={exp}
           deleteExperience={(e) => deleteExperience(e, index)}
+          handleChange={(e) => handleChange(e, index)}
         />
       ))}
       <SubmitBtn onClick={addExperience}>Add Exp</SubmitBtn>

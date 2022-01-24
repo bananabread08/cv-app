@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   StyledSection,
   StyledForm,
@@ -18,37 +18,9 @@ const DeleteBtn = styled(SubmitBtn)`
 `;
 
 export default function Experience(props) {
-  // const initial = {company: 'Wright and Co. Law Offices',
-  // jobTitle: 'Attorney at Law',
-  // startYear: 2015,
-  // endYear: 2020,
-  // jobDescription:
-  //   'Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design.',};
-  const [ExperienceValues, setExperienceValues] = useState({
-    company: '',
-    jobTitle: '',
-    startYear: '',
-    endYear: '',
-    jobDescription: '',
-  });
-
-  const handleChange = (e) => {
-    setExperienceValues({
-      ...ExperienceValues,
-      [e.target.name]: e.target.value, //utilizes the HTML name attribute of the node that is changed
-    });
-  };
-
-  const handleSubmit = (e) => {
-    setExperienceValues({
-      ...ExperienceValues,
-    });
-    e.preventDefault();
-  };
-
   return (
     <StyledSection>
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm>
         <DeleteBtn onClick={props.deleteExperience}>Delete</DeleteBtn>
         <InputContainer>
           <label>Company:</label>
@@ -56,8 +28,9 @@ export default function Experience(props) {
             type="text"
             placeholder="Themis Law Firm"
             name="company"
-            value={ExperienceValues.company}
-            onChange={handleChange}
+            className="exp"
+            value={props.exp.company}
+            onChange={props.handleChange}
           ></StyledInput>
         </InputContainer>
         <InputContainer>
@@ -66,8 +39,9 @@ export default function Experience(props) {
             type="text"
             placeholder="Prosecutor"
             name="jobTitle"
-            value={ExperienceValues.jobTitle}
-            onChange={handleChange}
+            className="exp"
+            value={props.exp.jobTitle}
+            onChange={props.handleChange}
           ></StyledInput>
         </InputContainer>
         <InputContainer>
@@ -75,11 +49,12 @@ export default function Experience(props) {
           <StyledInput
             type="number"
             name="startYear"
+            className="exp"
             placeholder="2015"
             min={1950}
             max={2030}
-            value={ExperienceValues.startYear}
-            onChange={handleChange}
+            value={props.exp.startYear}
+            onChange={props.handleChange}
           ></StyledInput>
         </InputContainer>
         <InputContainer>
@@ -87,11 +62,12 @@ export default function Experience(props) {
           <StyledInput
             type="number"
             name="endYear"
+            className="exp"
             placeholder="2022"
             min={1950}
             max={2030}
-            value={ExperienceValues.endYear}
-            onChange={handleChange}
+            value={props.exp.endYear}
+            onChange={props.handleChange}
           ></StyledInput>
         </InputContainer>
         <InputContainer>
@@ -100,14 +76,12 @@ export default function Experience(props) {
             type="text"
             placeholder="Provided counsel and represented businesses, individuals, and government agencies in legal matters and disputes of any kind."
             name="jobDescription"
-            value={ExperienceValues.jobDescription}
+            className="exp"
+            value={props.exp.jobDescription}
             rows={5}
-            onChange={handleChange}
+            onChange={props.handleChange}
           ></StyledTextArea>
         </InputContainer>
-        <SubmitBtn type="submit" value="Submit">
-          Submit
-        </SubmitBtn>
       </StyledForm>
     </StyledSection>
   );
