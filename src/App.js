@@ -1,28 +1,53 @@
+import React, { useState } from 'react';
 import './App.css';
 import Edit from './components/Edit';
+import Preview from './components/Preview/Preview';
+import uniqid from 'uniqid';
 
 function App() {
-  // const populateFields = () => {
-  //   const initialData = {
-  //     name: 'Phoenix Wright',
-  //     role: 'Defense Attorney',
-  //     contact: '09123345554',
-  //     address: 'Wright Anything Agency, Los Angeles',
-  //     email: 'theaceattorney12#@gmail.com',
-  //     site: 'https://github.com/daphoenix12#',
-  //   };
+  const [schoolList, setSchoolList] = useState([
+    { school: 'UPD', gradDate: '2012', course: 'BS ME', id: 'abc' },
+    { school: 'PSHS', gradDate: '2013', course: 'N/A', id: 'cdo' },
+  ]);
 
-  //   document.querySelectorAll(InputContainer).forEach((cont) => {
-  //     for (let key in initialData) {
-  //       if (key === cont.childNodes[1].name)
-  //         cont.childNodes[1].value = initialData[key];
-  //     }
-  //   });
-  // };
+  const handleChange = (e, index) => {
+    setSchoolList((prevState) => {
+      const selected = [...prevState].find((el, i) => i === index);
+      let items = [...prevState];
+      items[index] = { ...selected, [e.target.name]: e.target.value };
+      return (prevState = items);
+    });
+  };
+
+  const addEducation = (e) => {
+    let id = uniqid();
+    setSchoolList((prevState) =>
+      prevState.concat({
+        school: '',
+        gradDate: '',
+        course: '',
+        id: id,
+      })
+    );
+    e.preventDefault();
+  };
+
+  const deleteEducation = (e, selectedIndex) => {
+    e.preventDefault();
+    const newArr = [...schoolList].filter(
+      (e, index) => index !== selectedIndex
+    );
+    setSchoolList((prevState) => (prevState = newArr));
+  };
   return (
     <div className="App">
-      {/* <button onClick={populateFields}>Fill All Fields</button> */}
-      <Edit />
+      <Edit
+        schoolList={schoolList}
+        handleChange={handleChange}
+        addEducation={addEducation}
+        deleteEducation={deleteEducation}
+      />
+      <Preview schoolList={schoolList} />
     </div>
   );
 }

@@ -6,42 +6,13 @@ import Skills from './Skills';
 import uniqid from 'uniqid';
 import { SubmitBtn } from './styles/shared/sharedStyle';
 
-export default function Edit() {
-  const [schoolList, setSchoolList] = useState([
-    { school: 'UPD', gradDate: '2012', course: 'BS ME', id: 'abc' },
-    { school: 'PSHS', gradDate: '2013', course: 'N/A', id: 'cdo' },
-  ]);
+export default function Edit({
+  schoolList,
+  handleChange,
+  addEducation,
+  deleteEducation,
+}) {
   const [experienceList, setExperienceList] = useState([]);
-
-  const handleChange = (e, index) => {
-    setSchoolList((prevState) => {
-      const selected = [...prevState].find((el, i) => i === index);
-      let items = [...prevState];
-      items[index] = { ...selected, [e.target.name]: e.target.value };
-      return (prevState = items);
-    });
-  };
-
-  const addEducation = (e) => {
-    let id = uniqid();
-    setSchoolList((prevState) =>
-      prevState.concat({
-        school: '',
-        gradDate: '',
-        course: '',
-        id: id,
-      })
-    );
-    e.preventDefault();
-  };
-
-  const deleteEducation = (e, selectedIndex) => {
-    e.preventDefault();
-    const newArr = [...schoolList].filter(
-      (e, index) => index !== selectedIndex
-    );
-    setSchoolList((prevState) => (prevState = newArr));
-  };
 
   const addExperience = (e) => {
     e.preventDefault();
