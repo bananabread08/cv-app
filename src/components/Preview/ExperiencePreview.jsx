@@ -1,7 +1,7 @@
 export default function ExperiencePreview(props) {
   return (
     <div>
-      <h3>Experience</h3>
+      <h3>Work Experience</h3>
       {props.experienceList.map((exp) => (
         <div key={exp.id + exp.company}>
           <div>{exp.company}</div>

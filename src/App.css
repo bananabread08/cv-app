@@ -29,3 +29,10 @@ textarea {
   font-family: inherit;
   font-size: inherit;
 }
+
+@media only screen and (min-width: 768px) {
+  .App {
+    display: flex;
+    gap: 10px;
+  }
+}

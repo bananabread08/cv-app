@@ -17,7 +17,7 @@ export default function Edit({
   skillValues,
 }) {
   return (
-    <>
+    <div>
       <h2>General Information</h2>
       <GenInfo genInfoValues={genInfoValues} handleChange={handleChange} />
       <h2>Education </h2>
@@ -46,6 +46,6 @@ export default function Edit({
       <SubmitBtn onClick={addExperience}>Add Exp</SubmitBtn>
       <h2>Skills</h2>
       <Skills skillValues={skillValues} handleChange={handleChange} />
-    </>
+    </div>
   );
 }

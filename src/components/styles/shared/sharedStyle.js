@@ -11,7 +11,12 @@ const StyledSection = styled.section`
   box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
   -webkit-box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
   -moz-box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
+
+  @media only screen and (min-width: 768px) {
+    width: 50vw;
+  }
 `;
+
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -21,6 +26,10 @@ const StyledForm = styled.form`
   padding: 10px;
   font-size: 14px;
   width: 95vw;
+
+  @media only screen and (min-width: 768px) {
+    width: 50vw;
+  }
 `;
 
 const SubmitBtn = styled.button`
@@ -57,6 +66,10 @@ const StyledInput = styled.input`
     -webkit-appearance: none;
     margin: 0;
   }
+
+  @media only screen and (min-width: 768px) {
+    width: 30vw;
+  }
 `;
 
 const StyledTextArea = styled.textarea`
@@ -69,7 +82,12 @@ const StyledTextArea = styled.textarea`
     margin: -1px 0 -1px 0;
   }
   width: 50vw;
+
+  @media only screen and (min-width: 768px) {
+    width: 30vw;
+  }
 `;
+
 const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
