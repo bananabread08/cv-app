@@ -2,7 +2,7 @@ import React from 'react';
 import GenInfo from './GenInfo';
 import Education from './Education';
 import Experience from './Experience';
-import Skills from '../Skills';
+import Skills from './Skills';
 import { SubmitBtn } from '../styles/shared/sharedStyle';
 
 export default function Edit({
@@ -14,6 +14,7 @@ export default function Edit({
   experienceList,
   addExperience,
   deleteExperience,
+  skillValues,
 }) {
   return (
     <>
@@ -44,7 +45,7 @@ export default function Edit({
       ))}
       <SubmitBtn onClick={addExperience}>Add Exp</SubmitBtn>
       <h2>Skills</h2>
-      <Skills />
+      <Skills skillValues={skillValues} handleChange={handleChange} />
     </>
   );
 }

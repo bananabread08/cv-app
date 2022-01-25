@@ -31,6 +31,10 @@ function App() {
     },
   ]);
 
+  const [skillValues, setSkillValues] = useState({
+    skill: 'HTML-CSS-JavaScript-Webpack-ReactJS-MySQL-OOP',
+  });
+
   const handleChange = (e, index) => {
     if (e.target.classList.contains('gen-info')) {
       setGenInfoValues({ ...genInfoValues, [e.target.name]: e.target.value });
@@ -50,6 +54,9 @@ function App() {
         items[index] = { ...selected, [e.target.name]: e.target.value };
         return (prevState = items);
       });
+    }
+    if (e.target.classList.contains('skill')) {
+      setSkillValues({ ...skillValues, [e.target.name]: e.target.value });
     }
   };
 
@@ -102,6 +109,7 @@ function App() {
         schoolList={schoolList}
         genInfoValues={genInfoValues}
         experienceList={experienceList}
+        skillValues={skillValues}
         handleChange={handleChange}
         addEducation={addEducation}
         deleteEducation={deleteEducation}
@@ -112,6 +120,7 @@ function App() {
         schoolList={schoolList}
         genInfoValues={genInfoValues}
         experienceList={experienceList}
+        skillValues={skillValues}
       />
     </div>
   );
