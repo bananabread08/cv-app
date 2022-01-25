@@ -5,7 +5,7 @@ import {
   InputContainer,
   StyledInput,
   SubmitBtn,
-} from './styles/shared/sharedStyle';
+} from '../styles/shared/sharedStyle';
 import styled from 'styled-components';
 
 const DeleteBtn = styled(SubmitBtn)`

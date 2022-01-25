@@ -2,8 +2,8 @@ import React from 'react';
 import GenInfo from './GenInfo';
 import Education from './Education';
 import Experience from './Experience';
-import Skills from './Skills';
-import { SubmitBtn } from './styles/shared/sharedStyle';
+import Skills from '../Skills';
+import { SubmitBtn } from '../styles/shared/sharedStyle';
 
 export default function Edit({
   schoolList,

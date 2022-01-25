@@ -5,7 +5,7 @@ import {
   InputContainer,
   StyledInput,
   StyledTextArea,
-} from './styles/shared/sharedStyle';
+} from '../styles/shared/sharedStyle';
 
 export default function GenInfo({ genInfoValues, handleChange }) {
   return (

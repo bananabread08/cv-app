@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Edit from './components/Edit';
+import Edit from './components/Edit/Edit';
 import Preview from './components/Preview/Preview';
 import uniqid from 'uniqid';
 
