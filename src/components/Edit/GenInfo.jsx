@@ -52,7 +52,7 @@ export default function GenInfo({ genInfoValues, handleChange }) {
             name="address"
             className="gen-info"
             value={genInfoValues.address}
-            rows={3}
+            rows={2}
             onChange={handleChange}
           ></StyledTextArea>
         </InputContainer>

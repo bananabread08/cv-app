@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './components/styles/App.css';
 import Edit from './components/Edit/Edit';
 import Preview from './components/Preview/Preview';
 import uniqid from 'uniqid';
@@ -35,25 +35,31 @@ function App() {
     skill: 'HTML-CSS-JavaScript-Webpack-ReactJS-MySQL-OOP',
   });
 
+  const onChangeHelper = (e, prevState, index) => {
+    const selected = [...prevState].find((el, i) => i === index);
+    let items = [...prevState];
+    items[index] = { ...selected, [e.target.name]: e.target.value };
+    return items;
+  };
+
+  const deleteHelper = (e, selectedIndex, list) => {
+    const newArr = [...list].filter((e, index) => index !== selectedIndex);
+    return newArr;
+  };
+
   const handleChange = (e, index) => {
     if (e.target.classList.contains('gen-info')) {
       setGenInfoValues({ ...genInfoValues, [e.target.name]: e.target.value });
     }
     if (e.target.classList.contains('education')) {
-      setSchoolList((prevState) => {
-        const selected = [...prevState].find((el, i) => i === index);
-        let items = [...prevState];
-        items[index] = { ...selected, [e.target.name]: e.target.value };
-        return (prevState = items);
-      });
+      setSchoolList(
+        (prevState) => (prevState = onChangeHelper(e, prevState, index))
+      );
     }
     if (e.target.classList.contains('exp')) {
-      setExperienceList((prevState) => {
-        const selected = [...prevState].find((el, i) => i === index);
-        let items = [...prevState];
-        items[index] = { ...selected, [e.target.name]: e.target.value };
-        return (prevState = items);
-      });
+      setExperienceList(
+        (prevState) => (prevState = onChangeHelper(e, prevState, index))
+      );
     }
     if (e.target.classList.contains('skill')) {
       setSkillValues({ ...skillValues, [e.target.name]: e.target.value });
@@ -75,10 +81,10 @@ function App() {
 
   const deleteEducation = (e, selectedIndex) => {
     e.preventDefault();
-    const newArr = [...schoolList].filter(
-      (e, index) => index !== selectedIndex
+    const copy = [...schoolList];
+    setSchoolList(
+      (prevState) => (prevState = deleteHelper(e, selectedIndex, copy))
     );
-    setSchoolList((prevState) => (prevState = newArr));
   };
 
   const addExperience = (e) => {
@@ -98,10 +104,10 @@ function App() {
 
   const deleteExperience = (e, selectedIndex) => {
     e.preventDefault();
-    const newArr = [...experienceList].filter(
-      (e, index) => index !== selectedIndex
+    const copy = [...experienceList];
+    setExperienceList(
+      (prevState) => (prevState = deleteHelper(e, selectedIndex, copy))
     );
-    setExperienceList((prevState) => (prevState = newArr));
   };
   return (
     <div className="App">

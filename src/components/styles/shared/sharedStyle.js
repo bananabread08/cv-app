@@ -2,9 +2,6 @@ import styled from 'styled-components';
 
 const StyledSection = styled.section`
   width: 95vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 10px auto;
   background-color: #bfdcf5;
   border-radius: 20px;
@@ -12,8 +9,9 @@ const StyledSection = styled.section`
   -webkit-box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
   -moz-box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
 
-  @media only screen and (min-width: 768px) {
-    width: 50vw;
+  @media only screen and (min-width: 900px) {
+    width: 40vw;
+    margin-left: 10px;
   }
 `;
 
@@ -27,8 +25,8 @@ const StyledForm = styled.form`
   font-size: 14px;
   width: 95vw;
 
-  @media only screen and (min-width: 768px) {
-    width: 50vw;
+  @media only screen and (min-width: 900px) {
+    width: 40vw;
   }
 `;
 
@@ -67,8 +65,8 @@ const StyledInput = styled.input`
     margin: 0;
   }
 
-  @media only screen and (min-width: 768px) {
-    width: 30vw;
+  @media only screen and (min-width: 900px) {
+    width: 25vw;
   }
 `;
 
@@ -83,8 +81,8 @@ const StyledTextArea = styled.textarea`
   }
   width: 50vw;
 
-  @media only screen and (min-width: 768px) {
-    width: 30vw;
+  @media only screen and (min-width: 900px) {
+    width: 25vw;
   }
 `;
 

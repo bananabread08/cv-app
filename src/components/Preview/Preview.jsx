@@ -9,6 +9,12 @@ const PreviewWrapper = styled.div`
   background-color: #fff;
   width: 95%;
   margin: 0 auto;
+  width: 21cm;
+  height: 29.7cm;
+
+  @media only screen and (min-width: 768px) {
+    min-width: 21cm;
+  }
 `;
 export default function Preview({
   schoolList,
