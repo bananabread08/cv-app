@@ -4,7 +4,7 @@ const StyledSection = styled.section`
   width: 95vw;
   margin: 10px auto;
   background-color: #bfdcf5;
-  border-radius: 20px;
+  border-radius: 1em;
   box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
   -webkit-box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
   -moz-box-shadow: 1px 0px 12px 3px rgba(71, 63, 63, 0.43);
@@ -16,21 +16,18 @@ const StyledSection = styled.section`
 `;
 
 const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
+  padding: 1em;
   font-size: 14px;
-  width: 95vw;
+  li + li {
+    margin-top: 10px;
+  }
 
   @media only screen and (min-width: 900px) {
     width: 40vw;
   }
 `;
 
-const SubmitBtn = styled.button`
+const StyledBtn = styled.button`
   cursor: pointer;
   background-color: #1976d2;
   color: #fff;
@@ -47,9 +44,16 @@ const SubmitBtn = styled.button`
     background-color: #2268ad;
   }
 `;
+
+const DeleteBtn = styled(StyledBtn)`
+  background-color: red;
+  margin-bottom: 1rem;
+  &:hover {
+    background-color: #b43838;
+  }
+`;
 const StyledInput = styled.input`
   padding: 0.5rem;
-  border-radius: 15px;
   border: 1px solid transparent;
   &:focus {
     border: 2px solid #7167c7;
@@ -72,7 +76,6 @@ const StyledInput = styled.input`
 
 const StyledTextArea = styled.textarea`
   padding: 0.5rem;
-  border-radius: 15px;
   border: 1px solid transparent;
   resize: none;
   &:focus {
@@ -86,17 +89,13 @@ const StyledTextArea = styled.textarea`
   }
 `;
 
-const InputContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+const InputContainer = styled.li`
+  list-style: none;
   label {
     display: inline-block;
-    width: 150px;
+    width: 120px;
     text-align: right;
     padding-right: 5px;
-    flex: 1 0 35%;
     font-weight: 700;
   }
 `;
@@ -107,5 +106,6 @@ export {
   InputContainer,
   StyledInput,
   StyledTextArea,
-  SubmitBtn,
+  StyledBtn,
+  DeleteBtn,
 };

@@ -5,23 +5,14 @@ import {
   InputContainer,
   StyledInput,
   StyledTextArea,
-  SubmitBtn,
+  DeleteBtn,
 } from '../styles/shared/sharedStyle';
-import styled from 'styled-components';
-
-const DeleteBtn = styled(SubmitBtn)`
-  background-color: red;
-
-  &:hover {
-    background-color: #b43838;
-  }
-`;
 
 export default function Experience(props) {
   return (
     <StyledSection>
       <StyledForm>
-        <DeleteBtn onClick={props.deleteExperience}>Delete</DeleteBtn>
+        <DeleteBtn onClick={props.deleteExperience}>Remove</DeleteBtn>
         <InputContainer>
           <label>Company:</label>
           <StyledInput

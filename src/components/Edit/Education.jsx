@@ -4,17 +4,9 @@ import {
   StyledForm,
   InputContainer,
   StyledInput,
-  SubmitBtn,
+  DeleteBtn,
 } from '../styles/shared/sharedStyle';
-import styled from 'styled-components';
 
-const DeleteBtn = styled(SubmitBtn)`
-  background-color: red;
-
-  &:hover {
-    background-color: #b43838;
-  }
-`;
 export default function Education(props) {
   /* const init = {school: 'University of London',
   gradDate: '2021',
@@ -26,7 +18,7 @@ export default function Education(props) {
       <StyledForm>
         <DeleteBtn onClick={props.deleteEducation}>Remove</DeleteBtn>
         <InputContainer>
-          <label>School/University:</label>
+          <label>School:</label>
           <StyledInput
             type="text"
             placeholder="University of the Philippines"
@@ -37,7 +29,7 @@ export default function Education(props) {
           ></StyledInput>
         </InputContainer>
         <InputContainer>
-          <label>Graduation Year:</label>
+          <label>End Year:</label>
           <StyledInput
             type="number"
             name="gradDate"
