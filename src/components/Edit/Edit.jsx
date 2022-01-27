@@ -32,7 +32,9 @@ export default function Edit({
           />
         );
       })}
-      <StyledBtn onClick={addEducation}>Add School</StyledBtn>
+      <StyledBtn onClick={addEducation} primary>
+        Add School
+      </StyledBtn>
       <h2>Experience</h2>
       {experienceList.map((exp, index) => (
         <Experience
@@ -43,7 +45,9 @@ export default function Edit({
           handleChange={(e) => handleChange(e, index)}
         />
       ))}
-      <StyledBtn onClick={addExperience}>Add Exp</StyledBtn>
+      <StyledBtn onClick={addExperience} primary>
+        Add Exp
+      </StyledBtn>
       <h2>Skills</h2>
       <Skills skillValues={skillValues} handleChange={handleChange} />
     </div>

@@ -4,7 +4,7 @@ import {
   StyledForm,
   InputContainer,
   StyledInput,
-  DeleteBtn,
+  StyledBtn,
 } from '../styles/shared/sharedStyle';
 
 export default function Education(props) {
@@ -16,7 +16,7 @@ export default function Education(props) {
   return (
     <StyledSection>
       <StyledForm>
-        <DeleteBtn onClick={props.deleteEducation}>Remove</DeleteBtn>
+        <StyledBtn onClick={props.deleteEducation}>Remove</StyledBtn>
         <InputContainer>
           <label>School:</label>
           <StyledInput

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './components/styles/App.css';
 import Edit from './components/Edit/Edit';
 import Preview from './components/Preview/Preview';
+import Navbar from './components/Navbar';
 import uniqid from 'uniqid';
 
 function App() {
@@ -111,23 +112,26 @@ function App() {
   };
   return (
     <div className="App">
-      <Edit
-        schoolList={schoolList}
-        genInfoValues={genInfoValues}
-        experienceList={experienceList}
-        skillValues={skillValues}
-        handleChange={handleChange}
-        addEducation={addEducation}
-        deleteEducation={deleteEducation}
-        addExperience={addExperience}
-        deleteExperience={deleteExperience}
-      />
-      <Preview
-        schoolList={schoolList}
-        genInfoValues={genInfoValues}
-        experienceList={experienceList}
-        skillValues={skillValues}
-      />
+      <Navbar />
+      <div className="main-content">
+        <Edit
+          schoolList={schoolList}
+          genInfoValues={genInfoValues}
+          experienceList={experienceList}
+          skillValues={skillValues}
+          handleChange={handleChange}
+          addEducation={addEducation}
+          deleteEducation={deleteEducation}
+          addExperience={addExperience}
+          deleteExperience={deleteExperience}
+        />
+        <Preview
+          schoolList={schoolList}
+          genInfoValues={genInfoValues}
+          experienceList={experienceList}
+          skillValues={skillValues}
+        />
+      </div>
     </div>
   );
 }

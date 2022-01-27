@@ -5,14 +5,14 @@ import {
   InputContainer,
   StyledInput,
   StyledTextArea,
-  DeleteBtn,
+  StyledBtn,
 } from '../styles/shared/sharedStyle';
 
 export default function Experience(props) {
   return (
     <StyledSection>
       <StyledForm>
-        <DeleteBtn onClick={props.deleteExperience}>Remove</DeleteBtn>
+        <StyledBtn onClick={props.deleteExperience}>Remove</StyledBtn>
         <InputContainer>
           <label>Company:</label>
           <StyledInput

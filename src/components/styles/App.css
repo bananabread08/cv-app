@@ -7,7 +7,7 @@ body {
   margin: 0;
   height: 100%;
   overflow-wrap: break-word;
-  background-color: rgb(204, 204, 204);
+  background-color: #c0c0c0;
 }
 
 *,
@@ -40,8 +40,12 @@ textarea {
   vertical-align: top;
 }
 
+.main-content {
+  margin-top: 80px;
+}
+
 @media only screen and (min-width: 900px) {
-  .App {
+  .main-content {
     display: flex;
     gap: 10px;
   }
