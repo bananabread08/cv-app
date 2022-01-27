@@ -94,9 +94,9 @@ const InputContainer = styled.div`
   label {
     display: inline-block;
     width: 150px;
-    text-align: end;
+    text-align: right;
     padding-right: 5px;
-    flex-basis: 35%;
+    flex: 1 0 35%;
     font-weight: 700;
   }
 `;
