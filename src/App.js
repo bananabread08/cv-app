@@ -7,12 +7,12 @@ import uniqid from 'uniqid';
 
 function App() {
   const [genInfoValues, setGenInfoValues] = useState({
-    name: 'a',
-    role: 'b',
-    contact: 997,
-    address: '#35 Bil-loca',
-    email: 'rmkfermmin@gmail.com',
-    site: 'https://github.com',
+    name: 'Ralph Majed R. Fermin',
+    role: 'Software Engineer',
+    contact: 9984057931,
+    address: '#35 Bil-loca, Batac City, Ilocos Norte, Philippines ',
+    email: 'rmkfermin@gmail.com',
+    site: 'https://github.com/bananabread08',
   });
 
   const [schoolList, setSchoolList] = useState([
