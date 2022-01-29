@@ -42,6 +42,15 @@ function App() {
         'Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design.',
       id: 'a1235S',
     },
+    {
+      company: 'Google',
+      jobTitle: 'Software Engineer',
+      startYear: 2011,
+      endYear: 2021,
+      jobDescription:
+        'Build highly scalable and reusable front-end codes for customers. Worked collaboratively and supervised a young team to make innovative products and design.',
+      id: 'a11yS',
+    },
   ]);
 
   const [skillValues, setSkillValues] = useState({

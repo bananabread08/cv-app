@@ -5,7 +5,7 @@ const Wrapper = styled.section`
   margin-left: 40px;
 `;
 
-const SchoolContainer = styled.div`
+const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,14 +24,16 @@ export default function EducationPreview(props) {
       <h3>Education</h3>
       {props.schoolList.map((school) => (
         <div key={school.id + school.gradDate}>
-          <SchoolContainer>
+          <HeaderContainer>
             <h4>{school.school}</h4>
             {school.gradDate ? (
-              <p>{school.startDate + '-' + school.gradDate}</p>
+              <p>
+                {school.startDate} - {school.gradDate}
+              </p>
             ) : (
               <p>{school.startDate + '-XXXX'}</p>
             )}
-          </SchoolContainer>
+          </HeaderContainer>
           {school.course && <CourseP> {school.course} </CourseP>}
         </div>
       ))}

@@ -7,6 +7,7 @@ import SiteIcon from '../../assets/website.png';
 const Wrapper = styled.section`
   display: flex;
   justify-content: space-evenly;
+  padding: 15px;
   img {
     vertical-align: middle;
     margin-right: 5px;
