@@ -29,14 +29,23 @@ export default function Education(props) {
           ></StyledInput>
         </InputContainer>
         <InputContainer>
+          <label>Start Year:</label>
+          <StyledInput
+            type="number"
+            name="startDate"
+            className="education"
+            placeholder="2022"
+            value={props.school.startDate}
+            onChange={props.handleChange}
+          ></StyledInput>
+        </InputContainer>
+        <InputContainer>
           <label>End Year:</label>
           <StyledInput
             type="number"
             name="gradDate"
             className="education"
             placeholder="2022"
-            min={1950}
-            max={2030}
             value={props.school.gradDate}
             onChange={props.handleChange}
           ></StyledInput>

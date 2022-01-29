@@ -16,8 +16,20 @@ function App() {
   });
 
   const [schoolList, setSchoolList] = useState([
-    { school: 'UPD', gradDate: '2012', course: 'BS ME', id: 'abc' },
-    { school: 'PSHS', gradDate: '2013', course: 'N/A', id: 'cdo' },
+    {
+      school: 'University of the Philippines, Diliman',
+      startDate: '2006',
+      gradDate: '2012',
+      course: 'BS Electronics and Communications Engineering',
+      id: 'abc',
+    },
+    {
+      school: 'Philippine Science High School, Ilocos Region Campus',
+      startDate: '2011',
+      gradDate: '2013',
+      course: 'N/A',
+      id: 'cdo',
+    },
   ]);
 
   const [experienceList, setExperienceList] = useState([
@@ -72,6 +84,7 @@ function App() {
     setSchoolList((prevState) =>
       prevState.concat({
         school: '',
+        startDate: '',
         gradDate: '',
         course: '',
         id: id,

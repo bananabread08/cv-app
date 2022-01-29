@@ -4,7 +4,7 @@ import EmailIcon from '../../assets/email.png';
 import HomeIcon from '../../assets/home-address.png';
 import SiteIcon from '../../assets/website.png';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   justify-content: space-evenly;
   img {
