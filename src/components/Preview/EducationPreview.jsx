@@ -1,23 +1,9 @@
-import styled from 'styled-components';
+import {
+  Wrapper,
+  HeaderContainer,
+  StyledPara,
+} from '../styles/shared/sharedStyle';
 
-const Wrapper = styled.section`
-  text-align: left;
-  margin-left: 40px;
-`;
-
-const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  p {
-    margin-right: 40px;
-  }
-`;
-
-const CourseP = styled.p`
-  margin-top: -10px;
-`;
 export default function EducationPreview(props) {
   return (
     <Wrapper>
@@ -34,7 +20,7 @@ export default function EducationPreview(props) {
               <p>{school.startDate + '-XXXX'}</p>
             )}
           </HeaderContainer>
-          {school.course && <CourseP> {school.course} </CourseP>}
+          {school.course && <StyledPara> {school.course} </StyledPara>}
         </div>
       ))}
     </Wrapper>

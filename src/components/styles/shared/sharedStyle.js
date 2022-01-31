@@ -104,6 +104,25 @@ const StyledImg = styled.img`
   filter: brightness(0) invert(1); //change img color to white
 `;
 
+const Wrapper = styled.section`
+  text-align: left;
+  margin-left: 40px;
+`;
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    margin-right: 40px;
+  }
+`;
+
+const StyledPara = styled.p`
+  margin-top: -10px;
+`;
+
 export {
   StyledSection,
   StyledForm,
@@ -112,4 +131,7 @@ export {
   StyledTextArea,
   StyledBtn,
   StyledImg,
+  Wrapper,
+  HeaderContainer,
+  StyledPara,
 };

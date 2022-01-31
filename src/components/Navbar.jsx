@@ -16,6 +16,7 @@ const StyledNav = styled.nav`
   box-shadow: 0px 3px 7px 2px rgba(64, 61, 61, 0.6);
   -webkit-box-shadow: 0px 3px 7px 2px rgba(64, 61, 61, 0.6);
   -moz-box-shadow: 0px 3px 7px 2px rgba(64, 61, 61, 0.6);
+  z-index: 1;
 `;
 
 const StyledHeader = styled.header`
