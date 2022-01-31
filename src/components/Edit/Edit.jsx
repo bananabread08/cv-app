@@ -3,7 +3,8 @@ import GenInfo from './GenInfo';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
-import { StyledBtn } from '../styles/shared/sharedStyle';
+import AddIcon from '../../assets/add.png';
+import { StyledBtn, StyledImg } from '../styles/shared/sharedStyle';
 
 export default function Edit({
   schoolList,
@@ -33,7 +34,7 @@ export default function Edit({
         );
       })}
       <StyledBtn onClick={addEducation} primary>
-        Add School
+        <StyledImg src={AddIcon} alt="add-icon"></StyledImg>Add School
       </StyledBtn>
       <h2>Experience</h2>
       {experienceList.map((exp, index) => (
@@ -46,7 +47,7 @@ export default function Edit({
         />
       ))}
       <StyledBtn onClick={addExperience} primary>
-        Add Exp
+        <StyledImg src={AddIcon} alt="add-icon"></StyledImg>Add Exp
       </StyledBtn>
       <h2>Skills</h2>
       <Skills skillValues={skillValues} handleChange={handleChange} />

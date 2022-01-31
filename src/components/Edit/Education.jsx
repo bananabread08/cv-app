@@ -5,18 +5,17 @@ import {
   InputContainer,
   StyledInput,
   StyledBtn,
+  StyledImg,
 } from '../styles/shared/sharedStyle';
+import TrashIcon from '../../assets/trash.png';
 
 export default function Education(props) {
-  /* const init = {school: 'University of London',
-  gradDate: '2021',
-  course: 'Juris Doctor',} 
-  */
-
   return (
     <StyledSection>
       <StyledForm>
-        <StyledBtn onClick={props.deleteEducation}>Remove</StyledBtn>
+        <StyledBtn onClick={props.deleteEducation}>
+          <StyledImg src={TrashIcon} alt="trash-icon"></StyledImg>Remove
+        </StyledBtn>
         <InputContainer>
           <label>School:</label>
           <StyledInput

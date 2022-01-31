@@ -6,13 +6,17 @@ import {
   StyledInput,
   StyledTextArea,
   StyledBtn,
+  StyledImg,
 } from '../styles/shared/sharedStyle';
+import TrashIcon from '../../assets/trash.png';
 
 export default function Experience(props) {
   return (
     <StyledSection>
       <StyledForm>
-        <StyledBtn onClick={props.deleteExperience}>Remove</StyledBtn>
+        <StyledBtn onClick={props.deleteExperience}>
+          <StyledImg src={TrashIcon} alt="trash-icon"></StyledImg>Remove
+        </StyledBtn>
         <InputContainer>
           <label>Company:</label>
           <StyledInput

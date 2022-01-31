@@ -96,6 +96,14 @@ const InputContainer = styled.li`
   }
 `;
 
+const StyledImg = styled.img`
+  width: 17px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 5px;
+  filter: brightness(0) invert(1); //change img color to white
+`;
+
 export {
   StyledSection,
   StyledForm,
@@ -103,4 +111,5 @@ export {
   StyledInput,
   StyledTextArea,
   StyledBtn,
+  StyledImg,
 };
