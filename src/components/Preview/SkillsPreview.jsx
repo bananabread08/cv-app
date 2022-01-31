@@ -1,8 +1,10 @@
+import { Wrapper } from '../styles/shared/sharedStyle';
+
 export default function SkillsPreview(props) {
   return (
-    <div>
+    <Wrapper>
       <h3>Relevant Skills</h3>
-      <div>{props.skillValues.skill}</div>
-    </div>
+      <p>{props.skillValues.skill}</p>
+    </Wrapper>
   );
 }
