@@ -1,3 +1,36 @@
+# Project: CV Maker (Curriculum Vitae Maker)
+
+The CV Project for TOP (The Odin Project)
+
+## Features and Functionalities
+
+- Create a CV/Resume by inputting information on respective section forms.
+- Edit submitted information
+- Ability to save and / or print as `.pdf`.
+
+## Objectives and Outcomes
+
+Project is mainly my first real React project. It is made to practice React concepts like handling `States and Props` and `Lifting the State Up`. It was hard at first and can't really grasp the idea of handling JS and HTML (in the form of JSX) at the same time. It was fun and I enjoyed "thinking in React". This is currently version 2 and I improved the responsiveness on mobile and for larger screens.
+
+## Usage / Running the Project Locally
+
+1. Clone the repository.
+2. Update node_modules. Run `npm install` to project directory.
+3. Run the project. Run `npm start`.
+4. Fill any of the corresponding forms to edit the corresponding preview. (i.e edit General Info to change the General Info preview)
+5. Add more or remove Work Experience and Schools using the dedicated add button (see Add Button on corresponding sections).
+6. Export as PDF when you are done.
+
+## Development
+
+Made with mainly ReactJS and `create-react-app`.
+
+- React / CRA
+- `styled-components`
+- `flaticon` for the icons
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
