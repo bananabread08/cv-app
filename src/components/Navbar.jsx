@@ -34,12 +34,6 @@ const StyledList = styled.ul`
   img {
     margin-top: 5px;
   }
-
-  @media only screen and (min-width: 900px) {
-    li:first-child {
-      display: none;
-    }
-  }
 `;
 
 const NavBtn = styled(StyledBtn)`
@@ -47,21 +41,21 @@ const NavBtn = styled(StyledBtn)`
   background-color: white;
   color: black;
   font-weight: 700;
-  border-radius: ${(props) => (props.left ? '1rem 0 0 1rem' : '0 1rem 1rem 0')};
 
   &:hover {
-    background-color: #cacaca;
+    background-color: #a5a5a5;
   }
 `;
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <StyledNav>
       <StyledHeader>EZ-CVMAKER</StyledHeader>
       <StyledList>
         <li>
-          <NavBtn left>Edit</NavBtn>
-          <NavBtn>Preview</NavBtn>
+          <NavBtn onClick={props.handlePrint} left>
+            Download
+          </NavBtn>
         </li>
         <li>
           <a href="https://github.com/bananabread08/cv-app">

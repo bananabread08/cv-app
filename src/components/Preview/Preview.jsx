@@ -1,3 +1,4 @@
+import * as React from 'react';
 import EducationPreview from './EducationPreview';
 import GenInfoPreview from './GenInfoPreview';
 import ExperiencePreview from './ExperiencePreview';
@@ -16,21 +17,18 @@ const PreviewWrapper = styled.div`
     min-width: 21cm;
   }
 `;
-export default function Preview({
-  schoolList,
-  genInfoValues,
-  experienceList,
-  skillValues,
-}) {
+const Preview = React.forwardRef((props, ref) => {
   return (
-    <PreviewWrapper>
-      <GenInfoPreview genInfoValues={genInfoValues} />
+    <PreviewWrapper ref={ref}>
+      <GenInfoPreview genInfoValues={props.genInfoValues} />
       <hr width="90%"></hr>
-      <EducationPreview schoolList={schoolList} />
+      <EducationPreview schoolList={props.schoolList} />
       <hr width="90%"></hr>
-      <ExperiencePreview experienceList={experienceList} />
+      <ExperiencePreview experienceList={props.experienceList} />
       <hr width="90%"></hr>
-      <SkillsPreview skillValues={skillValues} />
+      <SkillsPreview skillValues={props.skillValues} />
     </PreviewWrapper>
   );
-}
+});
+
+export default Preview;

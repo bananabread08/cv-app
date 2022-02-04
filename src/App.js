@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './components/styles/App.css';
 import Edit from './components/Edit/Edit';
 import Preview from './components/Preview/Preview';
 import Navbar from './components/Navbar';
 import uniqid from 'uniqid';
+import { useReactToPrint } from 'react-to-print';
 
 function App() {
   const [genInfoValues, setGenInfoValues] = useState({
@@ -132,9 +133,15 @@ function App() {
       (prevState) => (prevState = deleteHelper(e, selectedIndex, copy))
     );
   };
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar handlePrint={handlePrint} />
       <div className="main-content">
         <Edit
           schoolList={schoolList}
@@ -148,6 +155,7 @@ function App() {
           deleteExperience={deleteExperience}
         />
         <Preview
+          ref={componentRef}
           schoolList={schoolList}
           genInfoValues={genInfoValues}
           experienceList={experienceList}
