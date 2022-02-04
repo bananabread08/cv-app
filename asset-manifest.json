@@ -1,29 +1,13 @@
 {
   "files": {
-    "main.css": "/cv-app/static/css/main.6aea6af1.chunk.css",
-    "main.js": "/cv-app/static/js/main.128988f6.chunk.js",
-    "main.js.map": "/cv-app/static/js/main.128988f6.chunk.js.map",
-    "runtime-main.js": "/cv-app/static/js/runtime-main.cab796a2.js",
-    "runtime-main.js.map": "/cv-app/static/js/runtime-main.cab796a2.js.map",
-    "static/js/2.da120d52.chunk.js": "/cv-app/static/js/2.da120d52.chunk.js",
-    "static/js/2.da120d52.chunk.js.map": "/cv-app/static/js/2.da120d52.chunk.js.map",
-    "static/js/3.2bda7e15.chunk.js": "/cv-app/static/js/3.2bda7e15.chunk.js",
-    "static/js/3.2bda7e15.chunk.js.map": "/cv-app/static/js/3.2bda7e15.chunk.js.map",
-    "static/js/4.d8f50e76.chunk.js": "/cv-app/static/js/4.d8f50e76.chunk.js",
-    "static/js/4.d8f50e76.chunk.js.map": "/cv-app/static/js/4.d8f50e76.chunk.js.map",
+    "main.css": "/cv-app/static/css/main.685c38dc.css",
+    "main.js": "/cv-app/static/js/main.bf1e4ae5.js",
     "index.html": "/cv-app/index.html",
-    "static/css/main.6aea6af1.chunk.css.map": "/cv-app/static/css/main.6aea6af1.chunk.css.map",
-    "static/js/2.da120d52.chunk.js.LICENSE.txt": "/cv-app/static/js/2.da120d52.chunk.js.LICENSE.txt",
-    "static/js/3.2bda7e15.chunk.js.LICENSE.txt": "/cv-app/static/js/3.2bda7e15.chunk.js.LICENSE.txt",
-    "static/js/4.d8f50e76.chunk.js.LICENSE.txt": "/cv-app/static/js/4.d8f50e76.chunk.js.LICENSE.txt",
-    "static/media/edit.1610f3fa.svg": "/cv-app/static/media/edit.1610f3fa.svg",
-    "static/media/github-corner-right.eb92e56d.svg": "/cv-app/static/media/github-corner-right.eb92e56d.svg",
-    "static/media/plus.b03e3495.svg": "/cv-app/static/media/plus.b03e3495.svg"
+    "main.685c38dc.css.map": "/cv-app/static/css/main.685c38dc.css.map",
+    "main.bf1e4ae5.js.map": "/cv-app/static/js/main.bf1e4ae5.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.cab796a2.js",
-    "static/js/3.2bda7e15.chunk.js",
-    "static/css/main.6aea6af1.chunk.css",
-    "static/js/main.128988f6.chunk.js"
+    "static/css/main.685c38dc.css",
+    "static/js/main.bf1e4ae5.js"
   ]
 }
