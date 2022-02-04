@@ -1,6 +1,7 @@
 # Project: CV Maker (Curriculum Vitae Maker)
 
 The CV Project for TOP (The Odin Project)
+[Live Preview Here!](https://bananabread08.github.io/cv-app/)
 
 ## Features and Functionalities
 
