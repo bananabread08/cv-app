@@ -28,6 +28,7 @@ Made with mainly ReactJS and `create-react-app`.
 - React / CRA
 - `styled-components`
 - `flaticon` for the icons
+- `react-to-print` to print/save component as PDF.
 
 ---
 
