@@ -8,27 +8,34 @@ import { useReactToPrint } from 'react-to-print';
 
 function App() {
   const [genInfoValues, setGenInfoValues] = useState({
-    name: 'Ralph Majed R. Fermin',
+    name: 'Phoenix Wright',
     role: 'Software Engineer',
     contact: 9984057931,
     address: '#35 Bil-loca, Batac City, Ilocos Norte, Philippines ',
-    email: 'rmkfermin@gmail.com',
+    email: 'imalwayswright08@gmail.com',
     site: 'https://github.com/bananabread08',
   });
 
   const [schoolList, setSchoolList] = useState([
     {
-      school: 'University of the Philippines, Diliman',
-      startDate: '2006',
-      gradDate: '2012',
-      course: 'BS Electronics and Communications Engineering',
+      school: 'Themis Law School',
+      startDate: '2005',
+      gradDate: '2009',
+      course: 'Juris Doctor',
       id: 'abc',
     },
     {
-      school: 'Philippine Science High School, Ilocos Region Campus',
-      startDate: '2011',
-      gradDate: '2013',
-      course: 'N/A',
+      school: 'University of the Themis',
+      startDate: '2005',
+      gradDate: '2009',
+      course: 'BS Psychology',
+      id: 'cdf',
+    },
+    {
+      school: 'Themis Science High School, North Region Campus',
+      startDate: '2001',
+      gradDate: '2005',
+      course: '',
       id: 'cdo',
     },
   ]);
