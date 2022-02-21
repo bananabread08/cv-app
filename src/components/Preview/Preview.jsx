@@ -15,6 +15,8 @@ const PreviewWrapper = styled.div`
 
   @media only screen and (min-width: 768px) {
     min-width: 21cm;
+    position: sticky;
+    top: 5em;
   }
 `;
 const Preview = React.forwardRef((props, ref) => {
