@@ -1,5 +1,7 @@
 # Project: CV Maker (Curriculum Vitae Maker)
 
+![Imgur](https://i.imgur.com/AEczzfk.png)
+
 The CV Project for TOP (The Odin Project)
 
 [Live Preview Here!](https://bananabread08.github.io/cv-app/)
